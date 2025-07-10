@@ -137,31 +137,102 @@
             	PrintEveryThirdNumber(); // for #2
 		
 		Console.WriteLine("Please give me an integer."); // for #3
-		int firstNumber = int.Parse(Console.ReadLine()); // input is automatically turned into an int
+		int firstNumber; // create a variable for the first bit of input
+	        string tmp =(Console.ReadLine()); // read in a line of input from the user
+		if (tmp != null) 
+		{
+			firstNumber = int.Parse(tmp); // make sure that the input isn't null
+		}
+		else
+		{
+		
+			throw new ArgumentException("Input can't be null!"); // throw an error if don't give you an input
+		}
+
+		
+			
 		Console.WriteLine("Thank you. Please give me a second integer."); // asking for the second number
-		int secondNumber = int.Parse(Console.ReadLine()); // input for the second number automatically made an int
+		
+		int secondNumber;
+	        string test1 = (Console.ReadLine()); // input for the second number automatically made an int
+		if (test1 != null)
+		{
+			secondNumber = int.Parse(test1); // parse the second number
+		}
+		else
+		{
+		
+			throw new ArgumentException("Input can't be null!"); // throw an error if don't give you an input
+		}
 		AreNumbersEqual(firstNumber, secondNumber); // Calls the method for #3
 		
 		Console.WriteLine("Thanks! Let me have another integer so we can figure out if it is even or odd."); // asking for 3rd number
-		int forEvenOrOdd = int.Parse(Console.ReadLine()); // input for the third number automatically made an int
+		int forEvenOrOdd;
+		string forEtest =(Console.ReadLine()); // input for the third number automatically made an int
+		if (forEtest != null)
+		{
+			forEvenOrOdd = int.Parse(forEtest); // if the input isn't null, send it
+		}
+		else
+		{
+
+			throw new ArgumentException("Input can't be null!"); // throw an error if don't give you an input
+		}
 		IsEven(forEvenOrOdd); // for #4
 		
 		Console.WriteLine("Thank you. How about another number to see if it is positive or negative?"); // for #5
-		int posOrNeg = int.Parse(Console.ReadLine()); // casts the number into an int
+		
+		int posOrNeg;
+	        string pOnTest=(Console.ReadLine()); // read input from user
+		if (pOnTest != null)
+		{
+			posOrNeg = int.Parse(pOnTest); // if input isn't null, senderoni
+		}
+		else
+		{
+			throw new ArgumentException("Input can't be null!"); // throw an error if don't give you an input
+		}
 		IsPositive(posOrNeg); // calls the method for #5
 
 		Console.WriteLine("Alright cool thanks. Now how old are you?"); // for #6
-		int votingAge = int.Parse(Console.ReadLine()); // cast the voting age into an int
+		int votingAge;
+		string vAge=(Console.ReadLine()); // read the voting age into a string
+		if (vAge != null)
+		{
+			votingAge = int.Parse(vAge); //parse the string
+		}
+		else
+		{
+			throw new ArgumentException("Input can't be null!"); // throw an error if don't give you an input
+		}
 		CanVote(votingAge); // Calling the method for #6
 
 		// all right, now we are heating up!
 
 		Console.WriteLine("Alright, we finished the first section. Now we are heating up. Let me have another integer plz."); // for #1
-		int fromTenToTen = int.Parse(Console.ReadLine()); // casts the number into an int
+		int fromTenToTen;
+	        string tToT =(Console.ReadLine()); // requests user input
+		if (tToT != null)
+		{
+			fromTenToTen = int.Parse(tToT); // if the input isn't null, send it
+		}
+		else
+		{
+			throw new ArgumentException("Input can't be null!"); // throw an error if don't give you an input
+		}
 	        IsInRange(fromTenToTen); // calls the method for heating up section #1
 
 		Console.WriteLine("Last thing to do. We need to do a multiplication table for a number - but I need the number from you!"); // for #2 in the heating up section
-		int forMult = int.Parse(Console.ReadLine()); // casts the number into an int
+		int forMult;
+	        string fMut =(Console.ReadLine()); // requests user input 
+		if (fMut != null)
+		{
+			forMult = int.Parse(fMut); // if the input isn't null, send
+		}
+		else
+		{
+			throw new ArgumentException("Input can't be null!"); // throw an error if don't give you an input
+		}
 		DisplayMultiplicationTable(forMult); // for heating up #2		
         }
     }
